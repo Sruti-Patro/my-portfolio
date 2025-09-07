@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: 'Sruti Patro - Fullstack Developer Portfolio',
     description:
       'Passionate full-stack developer crafting scalable and efficient systems. Explore my projects and technical expertise.',
-    url: 'https://your-domain.com',
+    url: 'https://sruti-patro.vercel.app/',
     siteName: 'Sruti Patro - Portfolio',
     images: [
       {
