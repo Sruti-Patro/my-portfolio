@@ -102,7 +102,7 @@ export default function ContactSection() {
 
 								{/* Instagram */}
 								<motion.a
-									href="https://instagram.com/sruti_patro"
+									href="https://instagram.com/wasabi_oncloud9"
 									whileHover={{ scale: 1.05 }}
 									className="flex items-center gap-3 px-4 py-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors border border-gray-700/50 group"
 								>
@@ -113,7 +113,7 @@ export default function ContactSection() {
 									</div>
 									<div>
 										<p className="font-semibold text-gray-200">Instagram</p>
-										<p className="text-sm text-gray-400">@sruti_patro</p>
+										<p className="text-sm text-gray-400">@wasabi_oncloud9</p>
 									</div>
 								</motion.a>
 							</div>
