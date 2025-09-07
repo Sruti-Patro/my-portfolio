@@ -1,12 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function SystemArchitecture() {
 	return (
-		<section className="py-20 px-4">
+		<section className="py-20 px-4 bg-lime-950/30 ">
 			<div className="max-w-6xl mx-auto">
-				<motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-3xl font-bold mb-12 text-center">
+				<motion.h2
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					viewport={{ once: true }}
+					className="text-3xl font-bold mb-12 text-center text-yellow-200"
+				>
 					My Projects
 				</motion.h2>
 
@@ -14,48 +20,43 @@ export default function SystemArchitecture() {
 					{[
 						{
 							title: 'Portfolio Website',
-							description: 'A personal portfolio built with Next.js, TypeScript, and TailwindCSS.',
+							description:
+								'A responsive personal portfolio to showcase skills, resume, and projects.',
 							details: [
-								'Implemented responsive design with TailwindCSS',
-								'Added smooth animations with Framer Motion',
-								'Organized sections for About, Projects, and Contact',
-								'Deployed seamlessly on Vercel',
+								'Designed and developed with React & TailwindCSS',
+								'Showcased skills, projects, and resume in a structured layout',
+								'Deployed seamlessly on GitHub Pages',
+								'Optimized for mobile and desktop screens',
 							],
-							tech: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'Vercel'],
+							tech: ['React', 'TailwindCSS', 'GitHub Pages'],
+							preview: 'https://patro-sruti.vercel.app/',
 						},
-						// {
-						// 	title: 'Quiz Portal',
-						// 	description: 'A full-stack MERN quiz platform with authentication and role-based access.',
-						// 	details: [
-						// 		'Developed Admin, Quiz Creator, and Participant dashboards',
-						// 		'Implemented authentication and authorization with JWT',
-						// 		'Supported multiple question types with analytics',
-						// 		'Designed clean and responsive UI for students',
-						// 	],
-						// 	tech: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT', 'Bootstrap'],
-						// },
 						{
-							title: 'Zygon Fest Website',
-							description: 'An interactive carnival-themed event website for our college annual fest.',
+							title: 'Real-Time Chat App',
+							description:
+								'A web-based chat app supporting multiple users with real-time messaging.',
 							details: [
-								'Created categorized event sections with scroll animations',
-								'Integrated filters for year and department',
-								'Added modal popups for event details',
-								'Worked in a team to deliver responsive design',
+								'Built with React frontend and Node.js + Express backend',
+								'Implemented WebSocket-based communication using Socket.io',
+								'Enabled seamless real-time communication between multiple users',
+								'Deployed for easy accessibility and testing',
+							],
+							tech: ['React', 'Node.js', 'Express.js', 'Socket.io'],
+							preview: 'https://patro-sruti.vercel.app/',
+						},
+						{
+							title: 'Zygon 2025 Fest Website',
+							description:
+								'An interactive carnival-themed event website for the annual college fest.',
+							details: [
+								'Contributed to animations and responsiveness',
+								'Created categorized event sections with filters',
+								'Added modal popups for detailed event info',
+								'Worked collaboratively with a team to deliver on time',
 							],
 							tech: ['React', 'Vite', 'Framer Motion', 'ScrollObserver', 'CSS'],
+							preview: 'https://zygon.vercel.app/',
 						},
-						// {
-						// 	title: 'Contact Management App',
-						// 	description: 'A MERN stack CRUD app for managing user contacts.',
-						// 	details: [
-						// 		'Implemented add, update, and delete functionalities',
-						// 		'Integrated search and validation features',
-						// 		'Added user authentication and error handling',
-						// 		'Deployed full-stack app with MongoDB backend',
-						// 	],
-						// 	tech: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT', 'Bootstrap'],
-						// },
 					].map((project, index) => (
 						<motion.div
 							key={index}
@@ -63,21 +64,38 @@ export default function SystemArchitecture() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ delay: index * 0.2 }}
-							className="bg-gray-900/50 rounded-xl p-6 backdrop-blur-sm border border-gray-800"
+							className="bg-lime-950/60 rounded-xl p-6 backdrop-blur-md border border-yellow-200/20 shadow-lg"
 						>
-							<h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-							<p className="text-gray-400 mb-6">{project.description}</p>
+							<h3 className="text-2xl font-bold mb-4 text-yellow-200">{project.title}</h3>
+							<p className="text-yellow-100/70 mb-4">{project.description}</p>
+
+							{/* View Button */}
+							<Link
+								href={project.preview}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-block mb-6 px-4 py-2 rounded-md bg-lime-900 text-yellow-200 font-semibold hover:bg-yellow-200 hover:text-lime-900 transition"
+							>
+								View Project
+							</Link>
+
 							<div className="mb-6">
-								<h4 className="text-lg font-semibold mb-2">Key Achievements:</h4>
-								<ul className="list-disc list-inside space-y-2 text-gray-300">
+								<h4 className="text-lg font-semibold mb-2 text-yellow-200/90">
+									Key Achievements:
+								</h4>
+								<ul className="list-disc list-inside space-y-2 text-yellow-100/80">
 									{project.details.map((detail, i) => (
 										<li key={i}>{detail}</li>
 									))}
 								</ul>
 							</div>
+
 							<div className="flex flex-wrap gap-2">
 								{project.tech.map((tech, i) => (
-									<span key={i} className="text-sm px-3 py-1 bg-blue-500/10 rounded-full border border-blue-500/20">
+									<span
+										key={i}
+										className="text-sm px-3 py-1 bg-yellow-200/10 text-yellow-200 rounded-full border border-yellow-200/30"
+									>
 										{tech}
 									</span>
 								))}
